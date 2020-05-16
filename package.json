@@ -1,0 +1,26 @@
+{
+  "name": "readme",
+  "version": "1.0.0",
+  "description": "A readme generation tool",
+  "main": "index.js",
+  "dependencies": {
+    "inquirer": "^7.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcsryan/readme-generator.git"
+  },
+  "keywords": [
+    "README"
+  ],
+  "author": "John C Ryan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcsryan/readme-generator/issues"
+  },
+  "homepage": "https://github.com/jcsryan/readme-generator#readme"
+}

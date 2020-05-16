@@ -1,5 +1,6 @@
 var inquirer = require('inquirer');
 var fs = require('fs');
+const generatePage = require('./template')
 // array of questions for user
 
 const promptUser = () => {
@@ -114,7 +115,7 @@ const promptUser = () => {
     .then(portfolioData => {
        const pageHTML = generatePage(portfolioData);
   
-      fs.writeFile('./index.html', pageHTML, err => {
+      fs.writeFile('./README.md', pageHTML, err => {
         if (err) throw new Error(err);
   
        console.log('Page created! Check out index.html in this directory to see it!');
