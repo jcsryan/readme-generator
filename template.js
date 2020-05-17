@@ -11,11 +11,12 @@
 ## Languages used: ${languages.join(', ')}
 
 
-## Project Description: ${description}
+## Project Description:
+${description}
 
 
 ## Github [Project Link](${link})
-### [Youtube guide video](https://youtu.be/Z5fvD2HjsPU)
+## [Youtube guide video](https://youtu.be/Z5fvD2HjsPU)
           `;
           })
           .join('')}
@@ -27,15 +28,19 @@
   module.exports = templateData => {
     const { projects, about, ...header } = templateData;
     return `
- ${header.badge}
- 
+   ${header.badge}
+  * [Description](#DESCRIPTION)
+  * [Youtube](#Youtube%20guide%20video)
+  * [Project Description](#Project%20Description:)
+
+
  ### Contributors: ${header.name}
  ### Github ID: ${header.github}
 
 
  # **DESCRIPTION**
  ## Thesis Statement: ${about}
- ### Breakdown:${generateProjects(projects)}
+ ${generateProjects(projects)}
  
  
  ##### ${new Date().getFullYear()} by ${header.name}
