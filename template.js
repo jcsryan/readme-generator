@@ -1,40 +1,20 @@
-// create the about section
-const generateAbout = aboutText => {
-    if (!aboutText) {
-      return '';
-    }
-  
-    return `
-     #${aboutText}
-    `;
-  };
-  
-  
+  //function that applies the users answers into a MD language
+  //appllies answers before the fs write file generates the page.
+  //populates header-like data
   const generateProjects = projectsArr => {
     return `
-        ${projectsArr.filter(({ feature }) => feature)
-          .map(({ name, description, languages, link }) => {
-            return `
-**${name}**
-${languages.join(', ')}
-${description}
-**${link}**
-          `;
-          })
-          .join('')}
-  
         ${projectsArr
           .filter(({ feature }) => !feature)
           .map(({ name, description, languages, link }) => {
             return `
-##Project Name:${name}
-##Languages used${languages.join(', ')}
+## Project Name: ${name}
+## Languages used: ${languages.join(', ')}
 
 
-##Project Description${description}
+## Project Description: ${description}
 
 
-##Github [Project Link](${link})
+## Github [Project Link](${link})
           `;
           })
           .join('')}
@@ -42,16 +22,14 @@ ${description}
     `;
   };
   
-  
+  //populates the project data
   module.exports = templateData => {
-    // destructure page data by section
     const { projects, about, ...header } = templateData;
-  
     return `
- ##${header.name}: Creator
- ##[${header.github}](https:www.github.com)
- ##About me: ${generateAbout(about)}
- ##Project info:${generateProjects(projects)}
- ###${new Date().getFullYear()} by ${header.name}
+ ## Lead name: ${header.name}
+ ## Github ID: ${header.github}
+ ## Thesis Statement: ${about}
+ ## Breakdown:${generateProjects(projects)}
+ ### ${new Date().getFullYear()} by ${header.name}
 `;
   };

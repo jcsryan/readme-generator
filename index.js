@@ -3,6 +3,8 @@ var fs = require('fs');
 const generatePage = require('./template')
 // array of questions for user
 
+//building an object the user fills via node questionaire. 
+//general header type questions.
 const promptUser = () => {
     return inquirer.prompt([
       {
@@ -42,6 +44,8 @@ const promptUser = () => {
       }
     ]);
   };
+
+  //Project oriented questions for the user to populate the object with.
   const promptProject = portfolioData => {
     if (!portfolioData.projects) {
       portfolioData.projects = [];
@@ -121,17 +125,3 @@ const promptUser = () => {
        console.log('Page created! Check out index.html in this directory to see it!');
        });
     });
-
-/*/ function to write README file
-function writeToFile(fileName, data) {
-}
-
-// function to initialize program
-function init() {
-
-}
-
-// function call to initialize program
-init();
-*/
-
