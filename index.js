@@ -9,6 +9,11 @@ const promptUser = () => {
     return inquirer.prompt([
       {
         type: 'input',
+        name: 'badge',
+        message: 'Visit inch-ci.org to generate a badge and place here'
+      },
+      {
+        type: 'input',
         name: 'name',
         message: 'What is your name? (Required)',
         validate: nameInput => {

@@ -26,6 +26,7 @@
   module.exports = templateData => {
     const { projects, about, ...header } = templateData;
     return `
+ ${header.badge}
  ## Lead name: ${header.name}
  ## Github ID: ${header.github}
  ## Thesis Statement: ${about}
