@@ -27,10 +27,16 @@
     const { projects, about, ...header } = templateData;
     return `
  ${header.badge}
- ## Lead name: ${header.name}
- ## Github ID: ${header.github}
+ 
+ ### Contributors: ${header.name}
+ ### Github ID: ${header.github}
+
+
+ # **DESCRIPTION**
  ## Thesis Statement: ${about}
- ## Breakdown:${generateProjects(projects)}
- ### ${new Date().getFullYear()} by ${header.name}
+ ### Breakdown:${generateProjects(projects)}
+ 
+ 
+ ##### ${new Date().getFullYear()} by ${header.name}
 `;
   };

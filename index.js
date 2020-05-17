@@ -105,7 +105,13 @@ const promptUser = () => {
             return false;
           }
         }
-      }
+      },
+        {
+          type: 'input',
+          name: 'howTo',
+          message: 'How do you use your project?'
+        }
+      
     ]).then(projectData => {
       portfolioData.projects.push(projectData);
       if (projectData.confirmAddProject) {
